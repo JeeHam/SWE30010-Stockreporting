@@ -36,6 +36,7 @@
 			$date =  " $date ";
 			$idPattern="^(\w*ID\w*)\d{4}$";
 			$patternCheck=true;
+
            	
 			if (!empty($_POST["id"])) {
             $id = $_POST["id"];
@@ -75,11 +76,13 @@
 			fclose($chkUnique);
 					
 			if ($patternCheck==true)
-				$data = "{$id}\t{$title}\t{$desc}\t{$date}\n"; // addslashes mean to add \ before ',",\ and null
+				$desc = trim($desc);
+				$date = trim($date);
+				$data = $id."\t".$title."\t".$desc."\t".$date."\n"; // addslashes mean to add \ before ',",\ and null
 				$handle = fopen($filename,"a");
 				if (is_writable($filename)){ // can write
 						echo "<p>Sales record added succesful!</p>"; // echo thank you for signning
-                fwrite($handle, $data."\n"); // write the file
+                fwrite($handle, $data); // write the file
 				}
 				else{ // cannot write
 					echo "<p>Sales record added failed!</p>"; // echo cannot write
