@@ -18,7 +18,7 @@
  echo"<a href=addsalesrecords.php><div id='clr'>Add a sales records</div></a>";
  echo"<a href=searchsalesrecords.php><div id='clr'>Display a sales records</div></a>";
  echo"<a href=about.php><div id='text'>About this assignment</div></a>";
-
+ echo"<a href=salesdetect.php><div id='clr'>Detect sales</div></a>";
 ?>
 </body>
 </html>
