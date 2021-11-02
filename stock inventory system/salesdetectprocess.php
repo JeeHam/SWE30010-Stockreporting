@@ -15,11 +15,35 @@
 <?php
 
 	$filename = "../../data/salesrecords/sales.txt"; // locate the file
-	$threshold = $_GET["threshold"];
+	$threshold = 0;
+	$threshold1 = $_GET["highsales"];
+	$threshold2 = $_GET["lowsales"];
 	$handle = fopen($filename, "r"); // open the file in read mode
 	$list = array();
+	$error = 0;
+	$highlow = 0;
+	
+	if (!empty($threshold1)&&!empty($threshold2)){// check if both have value
+		echo "<p>Please enter the value on one threshold only.</p>";
+		$error =1;
+	}
+		elseif (empty($threshold1)&&empty($threshold2)){// check if both are empty
+			echo "<p>Please enter the value on one threshold only.</p>";
+			$error =1;
+		}
+			elseif (empty($threshold2)){// check if lowsales is empty
+				$threshold = $threshold1;
+				$highlow = 1;
+			}
+				elseif (empty($threshold1)){// check if highsales is empty
+					$threshold = $threshold2;
+					$highlow = 2;
+				}
+					
+		
 	
 	if ($handle){
+		if ($error == 0 && $highlow == 1){
         while (!feof($handle)){  // loop while not end of file
 			$data = fgets($handle);  //read a line from the text file
 			$split = (explode("\t",$data)); // split the text from file
@@ -31,9 +55,23 @@
 			}
         }
 		fclose($handle);
+		}
+		
+		if ($error == 0 && $highlow == 2){
+        while (!feof($handle)){  // loop while not end of file
+			$data = fgets($handle);  //read a line from the text file
+			$split = (explode("\t",$data)); // split the text from file
+			if ($data != ""){
+				if ($split[2] <= $threshold){ //$split[2] is the value in description
+				
+					$list[$data] = $split; // add new element into associative array
+				}
+			}
+        }
+		fclose($handle);
+		}
 		
 		asort($list);
-		
 		foreach ($list as $x => $x_value){
             $x_true = (explode("\t",$x));
 			
@@ -45,5 +83,7 @@
         }
 	}
 ?>
+<a href="salesdetect.php">Back</a><br>
+<a href="index.php">Return to home page</a>
 </body>
 </html>
