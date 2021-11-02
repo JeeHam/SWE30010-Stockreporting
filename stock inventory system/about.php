@@ -15,5 +15,6 @@
  echo"<a href=index.php><div id='text'>Return to homepage</div></a><br>"
 
 ?>
+<p><a href=index.php><div id='text'>Return to Home Page</div></a>
 </body>
 </html>
