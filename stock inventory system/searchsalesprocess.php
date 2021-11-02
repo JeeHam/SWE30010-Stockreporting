@@ -34,10 +34,11 @@
                     // Loop through the $list array
                     foreach ($list as $x => $x_value) {
                         $x_true = (explode("\t",$x));
-                        echo "<div class=\"box\"><p><strong>ID: </strong>", $x_true[0], "</br>";
-                        echo "<strong>Title: </strong>", $x_true[1], "</br>";
-                        echo "<strong>Description: </strong>", $x_true[2], "</br>";
-                        echo "<strong>Date: </strong>", $x_value, "</br>";
+						echo "</br></br>";
+                        echo "<div class=\"box\"><p><strong>ID: </strong>", $x_true[0], "</br></br>";
+                        echo "<strong>Title: </strong>", $x_true[1], "</br></br>";
+                        echo "<strong>Description: </strong>", $x_true[2], "</br></br>";
+                        echo "<strong>Date: </strong>", $x_value, "</br></br>";
                         
                     }
                 
