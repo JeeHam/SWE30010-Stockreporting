@@ -16,7 +16,7 @@
     <input type="text" id="posid" name="id"  required="required" placeholder="ID****" maxlength="7"><br/></p>
 	<label>Title:<br></label>
     <input type="text" id="titles" name="title" placeholder="title" required="required" maxlength="30"><br/></p>
-	<label>Description:<br></label>
+	<label>Sales threshold:<br></label>
 	<textarea name="description" id="descriptions" rows="10" cols="60" placeholder="Enter comments here" required="required" maxlength="250"></textarea><br/></p>
    
 	<label>Date:<br></label>
