@@ -8,14 +8,10 @@
 <title>Stock Inventory System</title>
 </head>
 <body>
-        <?php // read the comments for hints on how to answer each item
+<?php
         $dir = "../../data/salesrecords"; // folder name
         $file = "sales.txt"; // text file name
-	$file_contents = file_get_contents($dir."/".$GET[$file]); // get file contents
-	echo $file_contents;
-        if ($_POST['submit']){
-		file_put_contents($dir."/".$GET['file_name'], $_POST['file_contents']);
-	}
+
         // check whether the folder is available
 		$filename = $dir . "/" . $file;
         if(!is_dir($dir)) {
@@ -41,6 +37,7 @@
 			$idPattern="^(\w*ID\w*)\d{4}$";
 			$patternCheck=true;
            	
+			
 			if (!empty($_POST["id"])) {
             $id = $_POST["id"];
             $idpattern = "^(\w*ID\w*)\d{4}$^";
@@ -70,7 +67,7 @@
 					if(strpos($data, $id) !== FALSE){
 						$patternCheck=false;
 						echo"<p>The ID is already existed. Please enter another ID</p>";
-						echo "<p>You can use the browser 'Go Back' button to return to the Search Job Vacancy Page.</p>"; 
+						echo "<p>You can use the browser 'Go Back' button to return to the Add Sales Page.</p>"; 
 						echo "<a href=index.php>Return to Home Page</a>";
 						exit;
 					}
@@ -79,11 +76,13 @@
 			fclose($chkUnique);
 					
 			if ($patternCheck==true)
-				$data = "{$id}\t{$title}\t{$desc}\t{$date}\n"; // addslashes mean to add \ before ',",\ and null
+				$desc = trim($desc);
+				$date = trim($date);
+				$data = $id."\t".$title."\t".$desc."\t".$date."\n"; // addslashes mean to add \ before ',",\ and null
 				$handle = fopen($filename,"a");
 				if (is_writable($filename)){ // can write
 						echo "<p>Sales record added succesful!</p>"; // echo thank you for signning
-                fwrite($handle, $data."\n"); // write the file
+                fwrite($handle, $data); // write the file
 				}
 				else{ // cannot write
 					echo "<p>Sales record added failed!</p>"; // echo cannot write
@@ -93,10 +92,10 @@
 			} 
 			else { // no input 
 				echo "<p>You must fill in everything!</p>"; // echo no input
-				echo "<p>Use the browser 'Go Back' button to return to the Postjob form</p>"; // echo solution
+				echo "<p>Use the browser 'Go Back' button to return to the Add Sales Page.</p>"; // echo solution
 			}
 ?>
-	<p><a href='?p=edit&file_name'><div id='text'>Edit</div></a><br>
+	<p><a href=editsalesrecord.php><div id='text'>Edit</div></a><br>
 	<p><a href=index.php><div id='text'>Return to Home Page</div></a>
     </body>
 </html>
