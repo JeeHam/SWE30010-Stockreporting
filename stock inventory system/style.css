@@ -1,0 +1,38 @@
+<style>
+#text{
+	text-align: right;
+	color:blue;
+}
+
+#home{
+	text-decoration: none;
+}
+
+#clr{
+	color:blue;
+	text-decoration: none;
+}
+
+#clr2{
+	color:#DC143C;
+}
+
+h1{
+	border-style: none;
+	background-color: #52B2BF;
+	color: white;
+	margin-bottom: 0px;
+}
+
+div{
+	display: inline-block;
+	overflow: hidden;
+}
+
+h4{
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+
+</style>
