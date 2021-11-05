@@ -9,35 +9,36 @@
 </head>
 <body>
 <h1>Stock Inventory System</h1>
+<br>
 
 <?php
 
- echo"<a href=addsalesrecords.php><div id='clr'><h4>Add a sales records</h4></div></a>";
- echo"<a href=searchsalesrecords.php><div id='clr'><h4>Display a sales records</h4></div></a>";
- echo"<a href=salesdetect.php><div id='clr'><h4>Detect sales</h4></div></a>";
- echo"<a href=editsalesrecord.php><div id='clr'><h4>Edit sales records</h4></div></a>";
- echo"<a href=displayalert.php><div id='clr'><h4>Display sales alert</h4></div></a>";
- echo"<a href=about.php><div id='text'><h4>About this assignment</h4></div></a><br>";
+ echo"<a href=addsalesrecords.php><div id='clr'><h4>Add Sales Record</h4></div></a>";
+ echo"<a href=searchsalesrecords.php><div id='clr'><h4>Display Sales Record</h4></div></a>";
+ echo"<a href=salesdetect.php><div id='clr'><h4>Detect High or Low Sales</h4></div></a>";
+ echo"<a href=editsalesrecord.php><div id='clr'><h4>Edit Sales Records</h4></div></a>";
+ echo"<a href=displayalert.php><div id='clr'><h4>Display Sales Alert</h4></div></a>";
+ echo"<a href=about.php><div id='text'><h4>About The Assignment</h4></div></a><br>";
 
 ?>
-
+<h2>Add New Sales Record </h2>
 <form action = "addsalesprocess.php" method = "POST">
 	<label>ID:<br></label>
     <input type="text" id="posid" name="id" required="required" placeholder="ID****" maxlength="7"><br/></p>
+	<br>
 	<label>Title:<br></label>
     <input type="text" id="titles" name="title" placeholder="title" required="required" maxlength="30"><br/></p>
+	<br>
 	<label>Sales thresholds:<br></label>
 	<textarea name="description" id="descriptions" placeholder="Number only" required="required" maxlength="250"></textarea><br/></p>
-   
+	<br>
 	<label>Date:<br></label>
     <input type="text" id="dates" name="date" placeholder="<?=Date('d-m-Y')?>" required="required"><br/></p>
-			
-   
-
-  <p><button type="submit">Submit</button>
+	<br>
+	<p><button type="submit">Submit</button>
 </form>
 <?php
-echo"<a href=index.php><div id='text'>Return to Home Page</div></a>"
+echo"<a href=index.php><div id='text'><br>Return to Home Page</div></a>"
 ?>
 </body>
 </html>

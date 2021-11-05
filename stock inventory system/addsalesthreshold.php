@@ -10,23 +10,23 @@
 <body>
 
 <h1>Stock Inventory System</h1>
+<br>
 	<?php
 
- 		echo"<a href=addsalesrecords.php><div id='clr'><h4>Add a sales records</h4></div></a>";
- 		echo"<a href=searchsalesrecords.php><div id='clr'><h4>Display a sales records</h4></div></a>";
- 		echo"<a href=salesdetect.php><div id='clr'><h4>Detect sales</h4></div></a>";
- 		echo"<a href=editsalesrecord.php><div id='clr'><h4>Edit sales records</h4></div></a>";
-		echo"<a href=displayalert.php><div id='clr'><h4>Display sales alert</h4></div></a>";
- 		echo"<a href=about.php><div id='text'><h4>About this assignment</h4></div></a><br>";
+ 		echo"<a href=addsalesrecords.php><div id='clr'><h4>Add Sales Record</h4></div></a>";
+		echo"<a href=searchsalesrecords.php><div id='clr'><h4>Display Sales Record</h4></div></a>";
+		echo"<a href=salesdetect.php><div id='clr'><h4>Detect High or Low Sales</h4></div></a>";
+		echo"<a href=editsalesrecord.php><div id='clr'><h4>Edit Sales Records</h4></div></a>";
+		echo"<a href=displayalert.php><div id='clr'><h4>Display Sales Alert</h4></div></a>";
+		echo"<a href=about.php><div id='text'><h4>About The Assignment</h4></div></a><br>";
 	?>
+	
 	<?php
 		$filename = "../../data/salesrecords/sales.txt"; // locate the file
 		$title= $_GET["title"];
 		$handle = fopen($filename, "r"); // open the file in read mode
 		$list = array();
-		
-
-		
+	
 			if ($handle) {
                 while (!feof($handle)) {  // loop while not end of file
                     $data = fgets($handle);  //read a line from the text file
@@ -59,7 +59,7 @@
 	<p><button type="submit">Submit</button>
 </form>
 <?php		
-	echo"<a href=searchsalesrecords.php><div id='clr'>Search for another sales record</div></a>";
+	echo"<a href=searchsalesrecords.php><div id='clr'>Search for Another Sales Record</div></a>";
 	echo"<a href=index.php><div id='text'>Return to Home Page</div></a>"
 ?>
 

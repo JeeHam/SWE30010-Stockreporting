@@ -95,7 +95,8 @@
 				echo "<p>Use the browser 'Go Back' button to return to the Add Sales Page.</p>"; // echo solution
 			}
 ?>
-	<p><a href=editsalesrecord.php><div id='text'>Edit</div></a><br>
+	<br>
+	<p><a href=editsalesrecord.php><div id='text'>Edit The Sales Record</div></a><br>
 	<p><a href=index.php><div id='text'>Return to Home Page</div></a>
     </body>
 </html>
