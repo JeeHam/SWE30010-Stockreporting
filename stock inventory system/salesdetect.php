@@ -31,6 +31,8 @@
 </form>
 <br>
 <br>
-<a href="index.php">Return to Home Page</a>
+<?php
+	echo"<a href=index.php><div id='text'>Return to Home Page</div></a><br>"
+?>
 </body>
 </html>
